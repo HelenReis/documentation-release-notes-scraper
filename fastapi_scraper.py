@@ -12,8 +12,9 @@ class FastApiScraper:
         last_version = soup.find(id=version_regex)
         last_version_limiter = last_version.find_next(id=version_regex)
         elements_between = self.elements_between_tags(last_version, last_version_limiter)
+        result_scraper = ScrapingSchema(last_version.get_text(), elements_between)
 
-        return elements_between
+        return result_scraper
         
 
     def elements_between_tags(self, tag1: NavigableString, tag2: NavigableString) -> List[NavigableString]:

@@ -2,11 +2,11 @@ class PostTemplate:
     def get_template(self):
         return [
             '---', 
-            " title: version", 
+            " title: title_version", 
             " date: 'date_now'", 
             " description: Notas de versão version",
             " thumbnailUrl: '/javascript-functions-thumbnail.jpeg'",
-            " tags: ['version', 'javascript']",
+            " tags: ['title_version']",
             " ---",
             "",
             " <div>",
