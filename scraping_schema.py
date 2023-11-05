@@ -1,0 +1,3 @@
+class ScrapingSchema:
+  title = ""
+  body = []
