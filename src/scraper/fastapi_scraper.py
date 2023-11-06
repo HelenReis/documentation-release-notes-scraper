@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup, NavigableString
-from scraping_schema import ScrapingSchema
+from models import ScrapingSchema
 from typing import List
 import re
 

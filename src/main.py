@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from fastapi_scraper import FastApiScraper
-from post_template import PostTemplate
+from scraper.fastapi_scraper import FastApiScraper
 from datetime import datetime
+from constants import POST_TEMPLATE
 
 app = FastAPI()
 
@@ -20,7 +20,7 @@ def create_file(template: list[str]):
 def replace_tags_file():
     fastApiScraper = FastApiScraper()
     scraper_schema = fastApiScraper.scrap()
-    template = PostTemplate().get_template()
+    template = POST_TEMPLATE
     body_result_string = ''.join(element.get_text() for element in scraper_schema.body)
     date = get_date()
 
