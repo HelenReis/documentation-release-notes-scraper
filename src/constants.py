@@ -1,11 +1,11 @@
 POST_TEMPLATE = [
-    '--- \n', 
-    "title: title_version\n", 
-    "date: 'date_now'\n", 
-    "description: Notas de versão version\n",
-    "thumbnailUrl: '/javascript-functions-thumbnail.jpeg'\n",
-    "tags: ['title_version']\n",
-    "---\n",
-    "<div>\n",
-    "body_version\n",
-    "</div>\n"]
+    '---', 
+    "\ntitle: 'title_version'", 
+    "\ndate: 'date_now'", 
+    "\ndescription: \"Notas de title_version\"",
+    "\nthumbnailUrl: \"/javascript-functions-thumbnail.jpeg\"",
+    "\ntags: ['title_version']",
+    "\n---",
+    "\n<div>",
+    "\nbody_version",
+    "\n</div>"]

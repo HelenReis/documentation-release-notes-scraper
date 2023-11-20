@@ -1,5 +1,5 @@
 from scraper.fastapi_scraper import FastApiScraper
-from utils import get_date
+from utils import get_date, remove_html_special_characters
 from constants import POST_TEMPLATE
 
 def create_file(template: list[str]):
@@ -19,5 +19,6 @@ def replace_tags_file():
         template[i] = template[i].replace("body_version", body_result_string)
         template[i] = template[i].replace("title_version", scraper_schema.title)
         template[i] = template[i].replace("date_now", date)
+        template[i] = remove_html_special_characters(template[i])
 
     create_file(template)
