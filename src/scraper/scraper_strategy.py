@@ -21,7 +21,7 @@ class OtherApiScraperStrategy(ScraperStrategy):
     def scraper(self):
         pass
         
-class Scraper:
+class ScraperContext:
     def __init__(self, scraper_strategy: ScraperStrategy):
         self.scraper_strategy = scraper_strategy
         
