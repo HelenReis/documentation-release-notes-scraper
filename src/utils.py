@@ -9,6 +9,6 @@ def get_date():
     return date_string
 
 def remove_html_special_characters(line: str):
-    pattern = r'[<>=]?\d+(?:\.\d+)?'
+    pattern = r'[^a-zA-Z0-9\.\s]'
 
     return re.sub(pattern, '', line)

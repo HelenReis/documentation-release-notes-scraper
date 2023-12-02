@@ -5,7 +5,7 @@ from typing import List
 import re
 
 class FastApiScraper:
-    def scrap(self):
+    def scrap(self) -> ScrapingSchema:
         page = requests.get('https://fastapi.tiangolo.com/release-notes/')
         soup = BeautifulSoup(page.text, 'html.parser')
         version_regex = re.compile("^\d{5}$")
