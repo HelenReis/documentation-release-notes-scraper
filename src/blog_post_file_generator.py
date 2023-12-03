@@ -3,9 +3,9 @@ from constants import POST_TEMPLATE
 from database.redis_client import redis_client
 from scraper.scraper_strategy import ScraperContext, FastApiScraperStrategy
 
-def create_file(template):
+def create_file(template, title, scraper_context: ScraperContext):
     my_string = ' '.join(template)
-    with open('blog_posts/post.mdx', 'w', errors='ignore') as file:
+    with open(f'{scraper_context.api_post_directory()}/{title}.mdx', 'w', errors='ignore') as file:
         file.write(my_string)
 
 def scraper():
@@ -17,7 +17,7 @@ def scraper():
         return
         
     template = generate_template(scraper_schema)
-    create_file(template)
+    create_file(template, scraper_schema.title, scraper_context)
     redis_client.set(scraper_context.api_description() + scraper_schema.title, scraper_schema.title)
     
 def format_resulting_scraper(scraper: ScraperContext):

@@ -4,12 +4,14 @@ from models import ScrapingSchema
 class ScraperStrategy:
     """Class representing a scraper strategy"""
     api_description = 'NONE'
+    post_directory = 'blog_posts'
     
     def scraper(self) -> ScrapingSchema:
         pass
     
 class FastApiScraperStrategy(ScraperStrategy):
     api_description = 'fastapi'
+    post_directory = 'blog_posts/python/fastapi'
     
     def scraper(self):
         fastApiScraper = FastApiScraper()
@@ -17,6 +19,7 @@ class FastApiScraperStrategy(ScraperStrategy):
     
 class OtherApiScraperStrategy(ScraperStrategy):
     api_description = 'OTHER'
+    post_directory = 'blog_posts'
     
     def scraper(self):
         pass
@@ -29,3 +32,5 @@ class ScraperContext:
         return self.scraper_strategy.scraper()
         
     def api_description(self): return self.scraper_strategy.api_description
+    
+    def api_post_directory(self): return self.scraper_strategy.post_directory

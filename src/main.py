@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from file_helper import scraper
+from blog_post_file_generator import scraper
 
 app = FastAPI()
 
